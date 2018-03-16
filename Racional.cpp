@@ -66,7 +66,7 @@ const Racional *Racional::operator+(const Racional &B) const{
 
     Racional *nuevo = new Racional(numerador, denominador); 
     return nuevo;
-}
+} // suma
 
 const Racional *Racional::operator-(const Racional &B) const{
     int numerador;
@@ -77,4 +77,26 @@ const Racional *Racional::operator-(const Racional &B) const{
 
     Racional *nuevo = new Racional(numerador, denominador); 
     return nuevo;
-}
+} // resta
+
+const Racional *Racional::operator*(const Racional &B) const{
+    int numerador;
+    int denominador;
+
+    numerador = (this->numerador * B.getNumerador()) ;
+    denominador = (this->denominador * B.getDenominador());
+
+    Racional *nuevo = new Racional(numerador, denominador); 
+    return nuevo;
+}// multipicacion
+
+const Racional *Racional::operator/(const Racional &B) const{
+    int numerador;
+    int denominador;
+
+    numerador = (this->numerador * B.getDenominador()) ;
+    denominador = (this->denominador * B.getNumerador());
+
+    Racional *nuevo = new Racional(numerador, denominador); 
+    return nuevo;
+}// division
