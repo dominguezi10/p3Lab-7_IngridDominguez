@@ -17,10 +17,12 @@ class Racional{
         Racional(int, int);
 
         void setNumerador(int);
-        int getNumerador(){return numerador;}
+        int getNumerador()const;
 
         void setDenominador(int);
-        int getDenominador(){return denominador;}
+        int getDenominador()const;
+
+        void Simplificar();
 
        // Racional* operator+(Racional&);
 
@@ -30,10 +32,10 @@ class Racional{
     friend ostream &operator<<(ostream &, const Racional &); // cout
 
     // metodos
-    const Racional* operator+(const Racional&) const; // probando para suma
-    const Racional* operator-(const Racional&) const;// probando resta
-    const Racional* operator*(const Racional&) const;// probando multiplicacion
-    const Racional* operator/(const Racional&) const;// probando division
+    const Racional *operator+(const Racional&) const; // probando para suma
+    const Racional *operator-(const Racional&) const;// probando resta
+    const Racional *operator*(const Racional&) const;// probando multiplicacion
+    const Racional *operator/(const Racional&) const;// probando division
 
     //void
     void operator+=(const Racional&) const; // probando para suma

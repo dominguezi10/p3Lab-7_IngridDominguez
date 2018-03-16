@@ -7,6 +7,8 @@ int menu();
 
 //suma
 void suma();
+//resta
+void resta();
 
 int main(){
     int opcion = 0;
@@ -14,13 +16,13 @@ int main(){
     while(opcion !=10){
         opcion = menu();
         switch(opcion){
-            case 1: {
-                    cout<< "uno" << endl;
-            };
+            case 1: 
+                    suma();
+            
             break;
 
             case 2:{
-
+                resta();
             };
             break;
 
@@ -83,10 +85,64 @@ int menu(){
         cin>> opcion;
     }
 
-    cout<< "esto salio" << opcion << endl;
+    cout << endl;
     return opcion;
 }
 
 void suma(){
+    int cont = 1;
+    const Racional *uno;
+    const Racional *dos;
 
+    cout<< "---------------- SUMA -----------"<< endl;
+    while(cont<=2){
+        int numerador;
+        int denominador;
+        cout<< "Suma: "<< cont << endl;
+        cout<< "Ingrese su numerador: ";
+        cin>> numerador;
+
+        cout<< "Ingrese el denominador: ";
+        cin>> denominador;
+
+        if(cont == 1){
+            uno = new Racional(numerador, denominador);
+        }else  if(cont== 2){
+            dos = new Racional(numerador, denominador);
+        }
+        cont++;
+    }
+
+    const Racional* suma;
+    suma= *uno + *dos;
+    cout <<  "es la suma?? "<< *suma<< endl<< endl;
+}
+
+void resta(){
+    int cont = 1;
+    const Racional *uno;
+    const Racional *dos;
+
+    cout<< "---------------- Resta -----------"<< endl;
+    while(cont<=2){
+        int numerador;
+        int denominador;
+        cout<< "Resta: "<< cont << endl;
+        cout<< "Ingrese su numerador: ";
+        cin>> numerador;
+
+        cout<< "Ingrese el denominador: ";
+        cin>> denominador;
+
+        if(cont == 1){
+            uno = new Racional(numerador, denominador);
+        }else  if(cont== 2){
+            dos = new Racional(numerador, denominador);
+        }
+        cont++;
+    }
+
+    const Racional* suma;
+    suma= *uno - *dos;
+    cout <<  "es la resta?? "<< *suma<< endl<< endl;
 }
