@@ -54,7 +54,7 @@ Racional:: ~Racional(){
 
 ///metodos para trabajar
 ostream &operator<<(ostream &out, const Racional &racional){
-    out << racional.numerador <<"/"<<racional.denominador << endl;
+    out << racional.numerador <<"/"<<racional.denominador;
     return out;
 }
 

@@ -1,11 +1,14 @@
 #include <iostream>
 #include "Racional.h"
 #include <vector>
+#include <fstream>
+#include <sstream>
 using namespace std;
 
 // prototipos
 int menu();
-
+//guardar
+void guardar(string);
 //suma
 void suma();
 void sumaAsignacion();
@@ -23,47 +26,90 @@ vector<Racional*> lasFraciones;
 void crear();
 
 int main(){
+    //ifstream file("laberinto.txt"); 
     int opcion = 0;
     while(opcion !=10){
         opcion = menu();
         switch(opcion){
-            case 1: 
+            
+            case 1: {
+                if(lasFraciones.size()>1){
                     suma();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+            };
+                    
             
             break;
 
             case 2:{
-                resta();
+                if(lasFraciones.size()>1){
+                    resta();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                
             };
             break;
 
             case 3:{
+                if(lasFraciones.size()>1){
                     multiplicacion();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                
+                    
             };
             break;
 
             case 4: {
+                if(lasFraciones.size()>1){
                     division();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
             };
             break;
 
             case 5:{
+                if(lasFraciones.size()>1){
                     sumaAsignacion();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                    
             };
             break;
 
             case 6:{
+                if(lasFraciones.size()>1){
                     restaAsignacion();
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                    
             };
             break;
 
             case 7: {
-                    multiplicacionAsignacion();
+                if(lasFraciones.size()>1){
+                    multiplicacionAsignacion();;
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                    
             };
             break;
 
             case 8:{
-                    divisionAsignacion();
+                if(lasFraciones.size()>1){
+                    divisionAsignacion();;
+                }else{
+                    cout<< "necesita crear antes al menos 2"<< endl << endl;
+                }
+                    
             };
             break;
 
@@ -115,6 +161,13 @@ void crear(){
     lasFraciones.push_back(nuevo);
 }// crear
 
+void guardar(string salida){
+    ofstream fichero("operaciones.txt", ios::app );
+    fichero << salida << endl;
+    
+    //fichero.close();
+}
+
 void suma(){
     int cont = 1;
     const Racional *uno;
@@ -122,7 +175,7 @@ void suma(){
 
     cout<< "---------------- SUMA -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -143,7 +196,14 @@ void suma(){
 
     const Racional* suma;
     suma= *uno + *dos;
-    cout <<  "es la suma?? "<< *suma<< endl<< endl;
+    cout <<  "es la suma?? "<< *suma<< endl;
+
+    stringstream salida;
+    salida<<  *uno << " + "<< *dos<< " = " << *suma;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
+
 }
 
 void resta(){
@@ -153,7 +213,7 @@ void resta(){
 
     cout<< "---------------- Resta -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -172,9 +232,14 @@ void resta(){
         cont++;
     }
 
-    const Racional* suma;
-    suma= *uno - *dos;
-    cout <<  "es la resta?? "<< *suma<< endl<< endl;
+    const Racional* resta;
+    resta= *uno - *dos;
+    cout <<  "es la resta?? "<< *resta<< endl<< endl;
+    stringstream salida;
+    salida<<  *uno << " - "<< *dos<< " = " << *resta;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 void multiplicacion(){
@@ -184,7 +249,7 @@ void multiplicacion(){
 
     cout<< "---------------- Multiplicacion -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -203,9 +268,14 @@ void multiplicacion(){
         cont++;
     }
 
-    const Racional* suma;
-    suma= (*uno) * (*dos);
-    cout <<  "es la multiplicacion?? "<< *suma<< endl<< endl;
+    const Racional* multiplicacion;
+    multiplicacion= (*uno) * (*dos);
+    cout <<  "es la multiplicacion?? "<< *multiplicacion<< endl<< endl;
+    stringstream salida;
+    salida<<  *uno << " * "<< *dos<< " = " << *multiplicacion;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 void division(){
@@ -215,7 +285,7 @@ void division(){
 
     cout<< "---------------- Division -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -237,6 +307,11 @@ void division(){
     const Racional* division;
     division= (*uno) / (*dos);
     cout <<  "es la division?? "<< *division<< endl<< endl;
+    stringstream salida;
+    salida<<  *uno << " / "<< *dos<< " = " << *division;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 
@@ -245,9 +320,10 @@ void sumaAsignacion(){
      Racional *uno;
     const Racional *dos;
 
+    stringstream salida;
     cout<< "---------------- SUMA ASIGANACION -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -260,6 +336,7 @@ void sumaAsignacion(){
 
         if(cont == 1){
             uno = lasFraciones[ (posicion-1)];
+            salida << *uno;
         }else  if(cont== 2){
             dos = lasFraciones[ (posicion-1)];
         }
@@ -268,16 +345,22 @@ void sumaAsignacion(){
 
     *uno += *dos;
     cout <<  "es la suma Asignacion?? "<< *uno<< endl<< endl;
+    
+    
+    salida<< " += "<< *dos<< " = " << *uno;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 void restaAsignacion(){
     int cont = 1;
     Racional *uno;
     const Racional *dos;
-
+    stringstream salida;
     cout<< "---------------- RESTA ASIGANCION -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -290,6 +373,7 @@ void restaAsignacion(){
 
         if(cont == 1){
             uno = lasFraciones[ (posicion-1)];
+            salida << *uno;
         }else  if(cont== 2){
             dos = lasFraciones[ (posicion-1)];
         }
@@ -298,16 +382,20 @@ void restaAsignacion(){
 
     *uno -= *dos;
     cout <<  "es la resta Asignacion?? "<< *uno<< endl<< endl;
+    salida<< " -= "<< *dos<< " = " << *uno;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 void multiplicacionAsignacion(){
     int cont = 1;
     Racional *uno;
     const Racional *dos;
-
+    stringstream salida;
     cout<< "---------------- MULTIPLICACION ASIGNACION -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -320,6 +408,7 @@ void multiplicacionAsignacion(){
 
         if(cont == 1){
             uno = lasFraciones[ (posicion-1)];
+            salida<< *uno;
         }else  if(cont== 2){
             dos = lasFraciones[ (posicion-1)];
         }
@@ -328,16 +417,21 @@ void multiplicacionAsignacion(){
 
     *uno *= *dos;
     cout <<  "es la mutiplicacion Asignacion?? "<< *uno<< endl<< endl;
+    
+    salida<< " *= "<< *dos<< " = " << *uno;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
 
 void divisionAsignacion(){
     int cont = 1;
     Racional *uno;
     const Racional *dos;
-
+    stringstream salida;
     cout<< "---------------- DIVISION ASIGNACION -----------"<< endl;
     for(int i =0; i<lasFraciones.size(); i++){
-        cout<< (i+1)<< "- "<< *lasFraciones[i];
+        cout<< (i+1)<< "- "<< *lasFraciones[i] << endl;
     }
 
     
@@ -350,6 +444,7 @@ void divisionAsignacion(){
 
         if(cont == 1){
             uno = lasFraciones[ (posicion-1)];
+            salida<< *uno;
         }else  if(cont== 2){
             dos = lasFraciones[ (posicion-1)];
         }
@@ -358,4 +453,8 @@ void divisionAsignacion(){
 
     *uno /= *dos;
     cout <<  "es la division Asignacion?? "<< *uno<< endl<< endl;
+    salida<< " /= "<< *dos<< " = " << *uno;
+    string aConcatenar= salida.str();
+    cout<< aConcatenar << endl<< endl;
+    guardar(aConcatenar);
 }
