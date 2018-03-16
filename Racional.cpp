@@ -27,6 +27,7 @@ Racional:: Racional(int numerador, int denominador){
     this->numerador = numerador;
     this->denominador = denominador;
     Simplificar();
+    Simplificar();
 };
 
 void Racional:: Simplificar(){
