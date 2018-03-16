@@ -38,10 +38,10 @@ class Racional{
     const Racional *operator/(const Racional&) const;// probando division
 
     //void
-    void operator+=(const Racional&) const; // probando para suma
-    void operator-=(const Racional&) const;// probando resta
-    void operator*=(const Racional&) const;// probando multiplicacion
-    void operator/=(const Racional&) const;// probando division
+    void operator+=(const Racional&); // probando para suma
+    void operator-=(const Racional&);// probando resta
+    void operator*=(const Racional&);// probando multiplicacion
+    void operator/=(const Racional&);// probando division
 
 };
 

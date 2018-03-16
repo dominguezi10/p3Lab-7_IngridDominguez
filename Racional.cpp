@@ -100,3 +100,52 @@ const Racional *Racional::operator/(const Racional &B) const{
     Racional *nuevo = new Racional(numerador, denominador); 
     return nuevo;
 }// division
+
+void Racional::operator+=(const Racional &B){
+    int numeradorNuevo;
+    int denominadorNuevo;
+
+    numeradorNuevo = (this->numerador * B.getDenominador()) + (this->denominador * B.getNumerador());
+    denominadorNuevo = this->denominador * B.getDenominador();
+
+    this->numerador = numeradorNuevo;
+    this->denominador = denominadorNuevo;
+    Simplificar();
+}// suma Asignacion
+
+void Racional::operator-=(const Racional &B){
+    int numeradorNuevo;
+    int denominadorNuevo;
+
+    numeradorNuevo = (this->numerador * B.getDenominador()) - (this->denominador * B.getNumerador());
+    denominadorNuevo = this->denominador * B.getDenominador();
+
+    this->numerador = numeradorNuevo;
+    this->denominador = denominadorNuevo;
+    Simplificar();
+}// resta Asignacion
+
+
+void Racional::operator*=(const Racional &B){
+    int numeradorNuevo;
+    int denominadorNuevo;
+
+    numeradorNuevo = (this->numerador * B.getNumerador()) ;
+    denominadorNuevo = (this->denominador * B.getDenominador());
+
+    this->numerador = numeradorNuevo;
+    this->denominador = denominadorNuevo;
+    Simplificar();
+}// multiplicacion Asignacion
+
+void Racional::operator/=(const Racional &B){
+    int numeradorNuevo;
+    int denominadorNuevo;
+
+    numeradorNuevo = (this->numerador * B.getDenominador()) ;
+    denominadorNuevo = (this->denominador * B.getNumerador());
+
+    this->numerador = numeradorNuevo;
+    this->denominador = denominadorNuevo;
+    Simplificar();
+}// division Asignacion
