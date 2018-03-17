@@ -180,10 +180,12 @@ void suma(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -218,10 +220,12 @@ void resta(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -254,10 +258,12 @@ void multiplicacion(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -290,10 +296,12 @@ void division(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -328,10 +336,12 @@ void sumaAsignacion(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -365,10 +375,12 @@ void restaAsignacion(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
@@ -400,11 +412,12 @@ void multiplicacionAsignacion(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
-
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
         if(cont == 1){
             uno = lasFraciones[ (posicion-1)];
@@ -436,10 +449,12 @@ void divisionAsignacion(){
 
     
     while(cont<=2){
-        int posicion;
-        cout<< "Elemento: "<< cont << endl;
-        cout<< "Ingrese la posicion del elemento que desea: ";
-        cin>> posicion;
+        int posicion = 100;
+        while(posicion> lasFraciones.size() || posicion<=0){
+            cout<< "Elemento: "<< cont << endl;
+            cout<< "Ingrese la posicion del elemento que desea: ";
+            cin>> posicion;
+        }
 
 
         if(cont == 1){
