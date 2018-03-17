@@ -449,7 +449,7 @@ void divisionAsignacion(){
 
     
     while(cont<=2){
-        int posicion = 100;
+        int posicion = 100;  
         while(posicion> lasFraciones.size() || posicion<=0){
             cout<< "Elemento: "<< cont << endl;
             cout<< "Ingrese la posicion del elemento que desea: ";
